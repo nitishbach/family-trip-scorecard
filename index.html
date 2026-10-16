@@ -8,14 +8,13 @@
 <script>
 (function(){const qs=[
 ['Nature','Would you like to see a big waterfall, a canyon, or a great mountain view?',[['Waterfall','photo-1432405972618-c60b0225b8f9'],['Mountains','photo-1464822759023-fed622ff2c3b'],['Canyon','photo-1474044159687-1ee9f3a51722']]],
-['Caves','Would you like to explore a cave or see cool rock shapes underground?',[['Cave','photo-1500530855697-b586d89ba3ee'],['Rock shapes','photo-1519681393784-d120267933ba'],['Rocky place','photo-1464822759023-fed622ff2c3b']]],
+['Caves','Would you like to explore a cave or see cool rock formations underground?',[['Explore a cave','photo-1518837695005-2083093ee35b'],['Rock formations','photo-1519681393784-d120267933ba']]],
 ['Scenic drives','Would you like to drive through forests or mountains and stop for views?',[['Mountain road','photo-1464822759023-fed622ff2c3b'],['Forest','photo-1448375240586-882707db888b'],['Open road','photo-1500534623283-312aade485b7']]],
-['Water fun','Would you like to visit a lake or river, or try kayaking or swimming?',[['Kayaking','photo-1500530855697-b586d89ba3ee'],['Lake','photo-1501785888041-af3ef285b470'],['River','photo-1437482078695-73f5ca6c96e2']]],
+['Water fun','Would you like to visit a lake or river, or try kayaking or swimming?',[['Kayaking','photo-1544551763-46a013bb70d5'],['Lake','photo-1501785888041-af3ef285b470'],['River','photo-1437482078695-73f5ca6c96e2']]],
 ['Animals','Would you like to see wild animals, go to a zoo, or visit an aquarium?',[['Wildlife','photo-1549366021-9f761d450615'],['Aquarium','photo-1535591273668-578e31182c4f'],['Birds','photo-1444464666168-49d633b86797']]],
-['Science and space','Would you like to see rockets, space displays, or fun science exhibits?',[['Space','photo-1451187580459-43490279c0fa'],['Science','photo-1532094349884-543bc11b234d'],['Planets','photo-1446776811953-b23d57bd21aa']]],
-['Games and activities','Would you like to play mini golf, go to an arcade, or try a new game together?',[['Mini golf','photo-1593113598332-cd288d649433'],['Arcade','photo-1511512578047-dfb367046420'],['Outdoor fun','photo-1473448912268-2022ce9509d8']]],
-['Food stops','Would you like to stop at a tasty local restaurant, bakery, or food spot?',[['Food','photo-1504674900247-0877df9cc836'],['Bakery','photo-1509440159596-0249088772ff'],['Meal','photo-1547592180-85f173990554']]],
-['Extra driving','If a place looks really fun, would you take a longer way to go see it?',[['Road trip','photo-1469854523086-cc02fe5d8800'],['Roadside stop','photo-1494783367193-149034c05e8f'],['Open road','photo-1500534623283-312aade485b7']]]];
+['Science and space','Would you like to see rockets, planets, or fun science exhibits?',[['Rocket launch','photo-1451187580459-43490279c0fa'],['Science museum','photo-1532094349884-543bc11b234d'],['Planets','photo-1446776811953-b23d57bd21aa']]],
+['Games and activities','Would you like to play mini golf, go to an arcade, or ride go-karts?',[['Mini golf','photo-1593113598332-cd288d649433'],['Arcade','photo-1511512578047-dfb367046420'],['Go-karts','photo-1558618666-fcd25c85cd64']]]
+];
 const pics=Array(7).fill(null);let n=0;const $=id=>document.getElementById(id);const url=id=>'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w=600&h=380&q=75';
 function progress(){let c=pics.filter(x=>x!==null).length;$('fill').style.width=c/7*100+'%';$('count').textContent=c+' answered';$('where').textContent='Question '+(n+1)+' of 7';}
 function dots(){let d=$('dots');d.replaceChildren();qs.forEach((q,i)=>{let b=document.createElement('button');b.type='button';b.className='dot'+(pics[i]!==null?' answered':'')+(i===n?' current':'');b.textContent=i+1;b.setAttribute('aria-label','Question '+(i+1));b.onclick=()=>{n=i;render();};d.append(b);});}
